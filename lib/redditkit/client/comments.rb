@@ -22,11 +22,13 @@ module RedditKit
       # @option subreddit [String, RedditKit::Subreddit] :subreddit The subreddit that you want to get recent comments from
       # @return [Array<RedditKit::Comment>]
       def recent_comments(options = {})
-        options.merge!({ subreddit: "all" })
-        path = "/r/#{options[:subreddit]}/comments.json"
-        options.delete :subreddit
+        parameters = { subreddit: "all" }
+        parameters.merge!(options)
         
-        comments_from_response(:get, path, options)
+        path = "/r/#{parameters[:subreddit]}/comments.json"
+        parameters.delete :subreddit
+        
+        comments_from_response(:get, path, parameters)
       end
 
       # Get comments on a link.

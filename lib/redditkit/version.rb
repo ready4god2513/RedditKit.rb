@@ -4,7 +4,7 @@ module RedditKit
   class Version
     MAJOR = 1
     MINOR = 1
-    PATCH = 2
+    PATCH = 6
 
     class << self
 

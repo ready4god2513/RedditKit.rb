@@ -110,7 +110,12 @@ module RedditKit
       def comments_from_response(request_type, path, parameters = {})
         response = send(request_type.to_sym, path, parameters)
         body = response[:body]
-        comments_listing = body.last
+
+        if body.is_a?(Hash)
+          comments_listing = body
+        elsif body.is_a?(Array)
+          comments_listing = body.last
+        end
 
         objects_from_listing(comments_listing)
       end
