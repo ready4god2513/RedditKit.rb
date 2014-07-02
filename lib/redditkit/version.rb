@@ -3,7 +3,7 @@ module RedditKit
   # A class for managing RedditKit's version number.
   class Version
     MAJOR = 1
-    MINOR = 2
+    MINOR = 3
     PATCH = 1
 
     class << self

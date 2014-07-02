@@ -70,7 +70,7 @@ module RedditKit
     end
 
     def user_agent
-      @user_agent ||= "RedditKit.rb #{RedditKit::Version.to_s}"
+      @user_agent ||= "#{RedditKit::App.name} #{RedditKit::Version.to_s}"
     end
 
     def middleware
