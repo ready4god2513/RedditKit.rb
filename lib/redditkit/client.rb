@@ -1,6 +1,7 @@
 require 'faraday'
 require 'redditkit/error'
 require 'redditkit/version'
+require 'redditkit/app'
 require 'redditkit/client/account'
 require 'redditkit/client/apps'
 require 'redditkit/client/captcha'
